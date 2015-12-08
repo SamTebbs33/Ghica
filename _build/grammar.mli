@@ -8,6 +8,7 @@ type token =
   | SUB
   | MUL
   | DIV
+  | EQUALS
   | TRUE
   | FALSE
 

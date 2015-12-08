@@ -15,6 +15,7 @@ let add = '+'
 let sub = '-'
 let mul = '*'
 let div = '/'
+let equals = '='
 
 rule read = 
     parse
@@ -24,6 +25,7 @@ rule read =
     | print { PRINT }
     | bool_true { TRUE }
     | bool_false { FALSE }
+    | equals { EQUALS }
     | id { ID (Lexing.lexeme lexbuf) }
     | int { INT (int_of_string (Lexing.lexeme lexbuf)) }
     | add { ADD }

@@ -1,7 +1,7 @@
 %token <int> INT
 %token <string> ID
 %token PRINT DECLARE EOF
-%token ADD SUB MUL DIV
+%token ADD SUB MUL DIV EQUALS
 %token TRUE FALSE
 
 %start top
@@ -15,6 +15,7 @@ top:
     ;
 
 statement:
+    | ID; EQUALS; expr { Ast.Assign ($1, $3) }
     | PRINT; expr { Ast.Print $2 }
     | DECLARE; ID; expr { Ast.Declare ($2, $3) }
     ;
