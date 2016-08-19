@@ -1,40 +1,28 @@
 ### Starting build.
 # Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules main.ml > main.ml.depends
+''ocamldep.opt -modules main.ml > main.ml.depends
 # Target: ast.ml.depends, tags: { extension:ml, file:ast.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules ast.ml > ast.ml.depends # cached
+''ocamldep.opt -modules ast.ml > ast.ml.depends
 # Target: env.ml.depends, tags: { extension:ml, file:env.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules env.ml > env.ml.depends # cached
+''ocamldep.opt -modules env.ml > env.ml.depends
 # Target: env.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:env.cmo, file:env.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -o env.cmo env.ml # cached
-# Target: ast.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ast.cmo, file:ast.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -o ast.cmo ast.ml # cached
+''ocamlc.opt -c -o env.cmo env.ml
 # Target: grammar.mly, tags: { extension:mly, file:grammar.mly, infer, ocaml, ocamlyacc, parser, quiet }
-/usr/local/bin/ocamlyacc grammar.mly # cached
+''ocamlyacc grammar.mly
 # Target: grammar.mli.depends, tags: { extension:mli, file:grammar.mli, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules grammar.mli > grammar.mli.depends # cached
-# Target: grammar.cmi, tags: { byte, compile, extension:mli, file:grammar.mli, interf, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -o grammar.cmi grammar.mli # cached
+''ocamldep.opt -modules grammar.mli > grammar.mli.depends
+# Target: ast.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ast.cmo, file:ast.ml, implem, ocaml, quiet }
+''ocamlc.opt -c -o ast.cmo ast.ml
 # Target: lexer.mll, tags: { extension:mll, file:lexer.mll, lexer, ocaml, ocamllex, quiet }
-/usr/local/bin/ocamllex.opt -q lexer.mll # cached
+''ocamllex.opt -q lexer.mll
 # Target: lexer.ml.depends, tags: { extension:ml, file:lexer.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules lexer.ml > lexer.ml.depends # cached
+''ocamldep.opt -modules lexer.ml > lexer.ml.depends
+# Target: grammar.cmi, tags: { byte, compile, extension:mli, file:grammar.mli, interf, ocaml, quiet }
+''ocamlc.opt -c -o grammar.cmi grammar.mli
 # Target: lexer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lexer.cmo, file:lexer.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -o lexer.cmo lexer.ml # cached
+''ocamlc.opt -c -o lexer.cmo lexer.ml
 # Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -o main.cmo main.ml
+''ocamlc.opt -c -o main.cmo main.ml
 # Target: env.cmx, tags: { compile, extension:cmx, extension:ml, file:env.cmx, file:env.ml, implem, native, ocaml, quiet }
-/usr/local/bin/ocamlopt.opt -c -o env.cmx env.ml # cached
-# Target: ast.cmx, tags: { compile, extension:cmx, extension:ml, file:ast.cmx, file:ast.ml, implem, native, ocaml, quiet }
-/usr/local/bin/ocamlopt.opt -c -o ast.cmx ast.ml # cached
-# Target: grammar.ml.depends, tags: { extension:ml, file:grammar.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules grammar.ml > grammar.ml.depends # cached
-# Target: grammar.cmx, tags: { compile, extension:cmx, extension:ml, file:grammar.cmx, file:grammar.ml, implem, native, ocaml, quiet }
-/usr/local/bin/ocamlopt.opt -c -o grammar.cmx grammar.ml # cached
-# Target: lexer.cmx, tags: { compile, extension:cmx, extension:ml, file:lexer.cmx, file:lexer.ml, implem, native, ocaml, quiet }
-/usr/local/bin/ocamlopt.opt -c -o lexer.cmx lexer.ml # cached
-# Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
-/usr/local/bin/ocamlopt.opt -c -o main.cmx main.ml
-# Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
-/usr/local/bin/ocamlopt.opt env.cmx ast.cmx grammar.cmx lexer.cmx main.cmx -o main.native
-# Compilation successful.
+''ocamlopt.opt -c -o env.cmx env.ml
+# Compilation unsuccessful.
